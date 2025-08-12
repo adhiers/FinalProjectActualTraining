@@ -3,13 +3,19 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using FinalProject.BO;
 
-namespace FinalProject.BO;
+namespace FinalProject.DAL;
 
-public partial class FinalProjectDBContext : DbContext
+public partial class FinalProjectDBContext : IdentityDbContext
 {
     public FinalProjectDBContext(DbContextOptions<FinalProjectDBContext> options)
         : base(options)
+    {
+    }
+
+    public FinalProjectDBContext()
     {
     }
 
@@ -47,8 +53,18 @@ public partial class FinalProjectDBContext : DbContext
 
     public virtual DbSet<WarrantyClaim> WarrantyClaims { get; set; }
 
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        base.OnConfiguring(optionsBuilder);
+        if (!optionsBuilder.IsConfigured)
+        {
+            optionsBuilder.UseSqlServer("Data Source=.\\;Initial Catalog=FinalProjectDBB;User ID=sa;Password=Laripagisql65;TrustServerCertificate=True");
+        }
+    }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        base.OnModelCreating(modelBuilder);
         modelBuilder.Entity<Agreement>(entity =>
         {
             entity.HasKey(e => e.AgreementId).HasName("PK__Agreemen__0A3082C3FD860975");

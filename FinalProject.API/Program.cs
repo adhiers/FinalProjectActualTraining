@@ -2,6 +2,7 @@ using FinalProject.BL.Extensions;
 using FinalProject.BL.Profiles;
 using FinalProject.DAL;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Builder;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,9 +15,7 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
 builder.Services.AddBusinessLayerServices();
-
 
 var app = builder.Build();
 

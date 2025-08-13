@@ -35,6 +35,7 @@ namespace FinalProject.DAL.Extensions
             services.AddScoped<ICar, CarDAL>();
             services.AddScoped<IDealer, DealerDAL>();
             services.AddScoped<IDealerCar, DealerCarDAL>();
+            services.AddScoped<IUsMan, UsManDAL>();
 
             return services;
         }

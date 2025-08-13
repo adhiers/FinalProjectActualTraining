@@ -8,6 +8,15 @@ namespace FinalProject.BL.DTO
 {
     public class DealerCarInsertDTO
     {
+        public string DealerCarId { get; set; }
 
+        public string CarId { get; set; }
+
+        public string DealerId { get; set; }
+
+        public int DealerCarPrice { get; set; }
+        public virtual CarDTO Car { get; set; }
+
+        public virtual DealerDTO Dealer { get; set; }
     }
 }

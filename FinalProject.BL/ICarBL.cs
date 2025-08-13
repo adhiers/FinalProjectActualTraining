@@ -5,9 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using FinalProject.BL.DTO;
 using FinalProject.BO;
-{
-    
-}
 
 namespace FinalProject.BL
 {

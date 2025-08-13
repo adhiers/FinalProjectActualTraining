@@ -20,6 +20,10 @@ namespace FinalProject.BL.Profiles
             CreateMap<Dealer, DealerDTO>();
             CreateMap<DealerInsertDTO, Dealer>();
             CreateMap<DealerUpdateDTO, Dealer>();
+
+            CreateMap<DealerCar, DealerCarDTO>();
+            CreateMap<DealerCarInsertDTO, DealerCar>();
+            CreateMap<DealerCarUpdateDTO, DealerCar>();
         }
     }
 }

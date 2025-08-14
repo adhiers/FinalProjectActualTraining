@@ -40,6 +40,7 @@ namespace FinalProject.DAL.Extensions
             services.AddScoped<IGuest, GuestDAL>();
             services.AddScoped<IScheduling, SchedulingDAL>();
             services.AddScoped<IConsultation, ConsultationDAL>();
+            services.AddScoped<ITestDrive, TestDriveDAL>();
 
             return services;
         }

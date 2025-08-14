@@ -56,6 +56,8 @@ namespace FinalProject.BL.Extensions
             services.AddScoped<IUsManBL, UsManBL>();
             services.AddScoped<IGuestBL, GuestBL>();
             services.AddScoped<ISchedulingBL, SchedulingBL>();
+            services.AddScoped<IConsultationBL, ConsultationBL>();
+            services.AddScoped<ITestDriveBL, TestDriveBL>();
 
             return services;
         }

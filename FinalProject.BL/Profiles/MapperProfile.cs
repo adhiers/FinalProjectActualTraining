@@ -40,6 +40,10 @@ namespace FinalProject.BL.Profiles
             CreateMap<Consultation, ConsultationDTO>();
             CreateMap<ConsultationInsertDTO, Consultation>();
             CreateMap<ConsultationUpdateDTO, Consultation>();
+
+            CreateMap<TestDrive, TestDriveDTO>();
+            CreateMap<TestDriveInsertDTO, TestDrive>();
+            CreateMap<TestDriveUpdateDTO, TestDrive>();
         }
     }
 }

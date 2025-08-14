@@ -396,11 +396,11 @@ public partial class FinalProjectDBContext : IdentityDbContext
 
         modelBuilder.Entity<SalesPerson>(entity =>
         {
-            entity.HasKey(e => e.Spid).HasName("PK__SalesPer__F4306129AC01A97B");
+            entity.HasKey(e => e.SPId).HasName("PK__SalesPer__F4306129AC01A97B");
 
             entity.ToTable("SalesPerson");
 
-            entity.Property(e => e.Spid)
+            entity.Property(e => e.SPId)
                 .HasMaxLength(20)
                 .IsUnicode(false)
                 .HasColumnName("SPId");

@@ -18,6 +18,6 @@ namespace FinalProject.BL.DTO
         public string Email { get; set; }
 
         public string PhoneNumber { get; set; }
-        public virtual Dealer Dealer { get; set; }
+        public virtual DealerDTO Dealer { get; set; }
     }
 }

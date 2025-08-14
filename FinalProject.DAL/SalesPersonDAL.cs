@@ -1,4 +1,5 @@
 ﻿using FinalProject.BO;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,13 +38,13 @@ namespace FinalProject.DAL
 
         public IEnumerable<SalesPerson> GetAll()
         {
-            var results = _context.SalesPeople.OrderBy(sp => sp.SPId).ToList();
+            var results = _context.SalesPeople.Include(d => d.Dealer).AsNoTracking().ToList();
             return results;
         }
 
         public SalesPerson GetById(string id)
         {
-            var result = _context.SalesPeople.Find(id);
+            var result = _context.SalesPeople.Include(d => d.Dealer).FirstOrDefault(sp => sp.SPId == id);
             if (result == null)
             {
                 throw new Exception("Dealer not found");

@@ -7,12 +7,12 @@ using FinalProject.BO;
 
 namespace FinalProject.DAL
 {
-    public interface IGuest
+    public interface IScheduling
     {
-        Guest Create(Guest item);
-        Guest GetById(int id);
-        Guest Update(Guest item);
+        Scheduling Create(Scheduling item);
+        Scheduling GetById(int id);
+        Scheduling Update(Scheduling item);
         void Delete(int id);
-        IEnumerable<Guest> GetAll();
+        IEnumerable<Scheduling> GetAll();
     }
 }

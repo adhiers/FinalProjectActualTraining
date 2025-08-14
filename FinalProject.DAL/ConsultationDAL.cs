@@ -17,7 +17,17 @@ namespace FinalProject.DAL
         }
         public Consultation Create(Consultation item)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _context.Consultations.Add(item);
+                _context.SaveChanges();
+                return item;
+            }
+            catch (Exception ex)
+            {
+                // Log the exception (not implemented here)
+                throw new Exception("An error occurred while adding the consultation.", ex);
+            }
         }
 
         public void Delete(string id)

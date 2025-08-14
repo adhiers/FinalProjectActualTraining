@@ -28,6 +28,10 @@ namespace FinalProject.BL.Profiles
             CreateMap<SalesPerson, SalesPersonDTO>();
             CreateMap<SalesPersonInsertDTO, SalesPerson>();
             CreateMap<SalesPersonUpdateDTO, SalesPerson>();
+
+            CreateMap<Guest, GuestDTO>();
+            CreateMap<GuestInsertDTO, Guest>();
+            CreateMap<GuestUpdateDTO, Guest>();
         }
     }
 }

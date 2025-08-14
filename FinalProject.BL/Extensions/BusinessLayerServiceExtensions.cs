@@ -55,6 +55,7 @@ namespace FinalProject.BL.Extensions
             services.AddScoped<ISalesPersonBL, SalesPersonBL>();
             services.AddScoped<IUsManBL, UsManBL>();
             services.AddScoped<IGuestBL, GuestBL>();
+            services.AddScoped<ISchedulingBL, SchedulingBL>();
 
             return services;
         }

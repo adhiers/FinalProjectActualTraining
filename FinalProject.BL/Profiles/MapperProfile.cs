@@ -32,6 +32,14 @@ namespace FinalProject.BL.Profiles
             CreateMap<Guest, GuestDTO>();
             CreateMap<GuestInsertDTO, Guest>();
             CreateMap<GuestUpdateDTO, Guest>();
+
+            CreateMap<Scheduling, SchedulingDTO>();
+            CreateMap<SchedulingInsertDTO, Scheduling>();
+            CreateMap<SchedulingUpdateDTO, Scheduling>();
+
+            CreateMap<Consultation, ConsultationDTO>();
+            CreateMap<ConsultationInsertDTO, Consultation>();
+            CreateMap<ConsultationUpdateDTO, Consultation>();
         }
     }
 }

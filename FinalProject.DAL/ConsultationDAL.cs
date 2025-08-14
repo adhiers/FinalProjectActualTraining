@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.WebSockets;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -32,22 +33,61 @@ namespace FinalProject.DAL
 
         public void Delete(string id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var entity = GetById(id);
+                if (entity == null)
+                {
+                    throw new KeyNotFoundException("Consultation not found.");
+                }
+                _context.Consultations.Remove(entity);
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                // Log the exception (not implemented here)
+                throw new Exception("An error occurred while deleting the consultation.", ex);
+            }
         }
 
         public IEnumerable<Consultation> GetAll()
         {
-            throw new NotImplementedException();
+            var results = _context.Consultations
+                .Include(c => c.Schedule)
+                .Include(c => c.Sp).AsNoTracking()
+                .ToList();
+            return results;
         }
 
         public Consultation GetById(string id)
         {
-            throw new NotImplementedException();
+            var result = _context.Consultations
+                .Include(c => c.Schedule)
+                .Include(c => c.Sp)
+                .FirstOrDefault(c => c.ConsultId == id);
+            if (result == null) 
+            {
+                throw new KeyNotFoundException("Consultation not found.");
+            }
+            return result;
         }
 
         public Consultation Update(Consultation item)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var existingEntity = GetById(item.ConsultId);
+                if (existingEntity == null)
+                {
+                    throw new KeyNotFoundException("Consultation not found.");
+                }
+                else
+                {
+                    _context.Entry(existingEntity).CurrentValues.SetValues(item);
+                    _context.SaveChanges();
+                    return existingEntity;
+                }
+            }
         }
     }
 }

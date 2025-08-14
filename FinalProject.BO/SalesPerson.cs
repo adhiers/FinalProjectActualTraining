@@ -7,7 +7,7 @@ namespace FinalProject.BO;
 
 public partial class SalesPerson
 {
-    public string Spid { get; set; }
+    public string SPId { get; set; }
 
     public string SalesName { get; set; }
 

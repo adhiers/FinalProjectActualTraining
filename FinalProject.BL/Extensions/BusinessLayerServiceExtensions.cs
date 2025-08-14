@@ -18,15 +18,7 @@ namespace FinalProject.BL.Extensions
     {
         public static IServiceCollection AddBusinessLayerServices(this IServiceCollection services)
         {
-            // Get configuration from the service provider
-            //var serviceProvider = services.BuildServiceProvider();
-            //var configuration = serviceProvider.GetRequiredService<IConfiguration>();
-
-            //// Register AppSettings for DI
-            //services.Configure<AppSettings>(configuration.GetSection("AppSettings"));
-
             services.AddDataAccessLayerServices();
-
             var appSettingsSection = services.BuildServiceProvider()
                 .GetRequiredService<IConfiguration>()
                 .GetSection("AppSettings");

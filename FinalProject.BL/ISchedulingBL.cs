@@ -14,5 +14,6 @@ namespace FinalProject.BL
         SchedulingDTO AddScheduling(SchedulingInsertDTO schedulingInsertDTO);
         SchedulingDTO UpdateScheduling(SchedulingUpdateDTO schedulingUpdateDTO);
         void DeleteScheduling(int id);
+        IEnumerable<SchedulingDTO> GetBySearch(string search);
     }
 }

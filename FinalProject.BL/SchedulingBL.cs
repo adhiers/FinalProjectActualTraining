@@ -87,5 +87,15 @@ namespace FinalProject.BL
                 throw new Exception("An error occurred while updating the scheduling.", ex);
             }
         }
+
+        public IEnumerable<SchedulingDTO> GetBySearch(string search)
+        {
+            var schedules = _schedulingDAL.GetBySearch(search);
+            if (schedules == null || !schedules.Any())
+            {
+                throw new KeyNotFoundException($"No schedules found for Guest ID {search}.");
+            }
+            return _mapper.Map<IEnumerable<SchedulingDTO>>(schedules);
+        }
     }
 }

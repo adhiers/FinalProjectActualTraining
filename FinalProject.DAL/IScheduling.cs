@@ -14,5 +14,6 @@ namespace FinalProject.DAL
         Scheduling Update(Scheduling item);
         void Delete(int id);
         IEnumerable<Scheduling> GetAll();
+        IEnumerable<Scheduling> GetBySearch(string search);
     }
 }

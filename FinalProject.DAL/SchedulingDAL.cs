@@ -83,5 +83,22 @@ namespace FinalProject.DAL
                 throw new Exception($"An error occurred while updating the scheduling: {ex.Message}");
             }
         }
+
+        public IEnumerable<Scheduling> GetBySearch(string search)
+        {
+            var result = _context.Schedulings
+                .Include(s => s.Guest)
+                .Include(s => s.Dealer)
+                .Include(s => s.Consultation)
+                .Where(s => s.Program.Contains(search) ||
+                            s.Guest.GuestId.ToString().Contains(search) ||
+                            s.Dealer.DealerId.Contains(search))
+                .ToList();
+            if (result == null || !result.Any())
+            {
+                throw new KeyNotFoundException($"No schedulings found for search term '{search}'.");
+            }
+            return result;
+        }
     }
 }

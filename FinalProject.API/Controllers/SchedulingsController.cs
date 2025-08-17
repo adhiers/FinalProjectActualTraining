@@ -47,6 +47,24 @@ namespace FinalProject.API.Controllers
             }
         }
 
+        [HttpGet("search/{search}")]
+        public ActionResult<IEnumerable<SchedulingDTO>> GetSchedulingsBySearch(string search)
+        {
+            try
+            {
+                var schedulings = _schedulingBL.GetBySearch(search);
+                if (schedulings == null || !schedulings.Any())
+                {
+                    return NotFound($"No schedules found matching search term '{search}'.");
+                }
+                return Ok(schedulings);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Error searching schedules: {ex.Message}");
+            }
+        }
+
         [HttpPost]
         public ActionResult<SchedulingDTO> Post(SchedulingInsertDTO schedulingInsertDTO)
         {

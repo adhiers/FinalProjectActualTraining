@@ -5,7 +5,7 @@ using System.Web;
 
 namespace FinalProject.WebForm.Models
 {
-    public class Schedule
+    public class Scheduling
     {
         public int ScheduleId { get; set; }
 

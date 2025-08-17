@@ -88,6 +88,11 @@ namespace FinalProject.DAL
                     return existingEntity;
                 }
             }
+            catch (Exception ex)
+            {
+                // Log the exception (not implemented here)
+                throw new Exception("An error occurred while updating the consultation.", ex);
+            }
         }
     }
 }

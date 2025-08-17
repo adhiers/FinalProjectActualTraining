@@ -91,6 +91,11 @@ namespace FinalProject.BL
                 }
                 return _mapper.Map<ConsultationDTO>(consultation);
             }
+            catch (Exception ex)
+            {
+                // Log the exception or handle it as needed
+                throw new Exception($"An error occurred while updating the consultation with ID {consultationUpdateDTO.ConsultId}.", ex);
+            }
         }
     }
 }

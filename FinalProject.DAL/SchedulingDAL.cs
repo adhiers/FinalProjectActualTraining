@@ -92,7 +92,7 @@ namespace FinalProject.DAL
                 .Include(s => s.Consultation)
                 .Where(s => s.Program.Contains(search) ||
                             s.Guest.GuestId.ToString().Contains(search) ||
-                            s.Dealer.DealerId.Contains(search))
+                            s.Dealer.DealerId.Equals(search))
                 .ToList();
             if (result == null || !result.Any())
             {

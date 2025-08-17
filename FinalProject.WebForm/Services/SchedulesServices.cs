@@ -61,5 +61,26 @@ namespace FinalProject.WebForm.Services
                 throw new Exception($"An error occurred while fetching schedule: {ex.Message}", ex);
             }
         }
+        public async Task<List<Schedule>> GetSchedulesBySearch(string search)
+        {
+            try
+            {
+                var response = await _httpClient.GetAsync($"/api/Schedules/search/{search}");
+                if (response.IsSuccessStatusCode)
+                {
+                    var schedules = await response.Content.ReadAsStringAsync();
+                    List<Schedule> scheduleList = JsonConvert.DeserializeObject<List<Schedule>>(schedules);
+                    return scheduleList;
+                }
+                else
+                {
+                    throw new Exception($"Error fetching schedules by search term '{search}': {response.ReasonPhrase}");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"An error occurred while searching for schedules: {ex.Message}", ex);
+            }
+        }
     }
 }

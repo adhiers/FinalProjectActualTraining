@@ -45,5 +45,21 @@ namespace FinalProject.WebForm
                 }
             }
         }
+
+        protected async void btnSearch_Click(object sender, EventArgs e)
+        {
+            string keyword = txtSearch.Text.Trim();
+            var schedules = await _schedulingsServices.GetSchedulesBySearch(keyword);
+            gvSchedules.DataSource = schedules;
+            gvSchedules.DataBind();
+        }
+
+        protected async void btnClearSearch_Click(object sender, EventArgs e)
+        {
+            txtSearch.Text = "";
+            var schedules = await _schedulingsServices.GetSchedules();
+            gvSchedules.DataSource = schedules;
+            gvSchedules.DataBind();
+        }
     }
 }

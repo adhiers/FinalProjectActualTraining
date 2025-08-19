@@ -6,6 +6,11 @@
         </section>
         <br />
         <div class="col-md-6">
+            <asp:Panel ID="pnlSearch" runat="server" CssClass="mb-3">
+                <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control d-inline-block w-auto" placeholder="Search by Guest ID, Dealer ID, or Program" />
+                <asp:Button ID="btnSearch" runat="server" Text="Search" CssClass="btn btn-primary ml-2" OnClick="btnSearch_Click" />
+                <asp:Button ID="btnClearSearch" runat="server" Text="Clear" CssClass="btn btn-secondary ml-2" OnClick="btnClearSearch_Click" />
+            </asp:Panel>
             <asp:DataGrid ID="gvSchedules" runat="server" CssClass="table table-striped" AutoGenerateColumns="false">
                 <Columns>
                     <asp:BoundColumn DataField="ScheduleId" HeaderText="Schedule ID" />

@@ -23,14 +23,14 @@ namespace FinalProject.BL.DTO
 
         public DateTime Tddate { get; set; }
 
-        public virtual Consultation Consult { get; set; }
+        //public virtual Consultation Consult { get; set; }
 
-        public virtual Customer Customer { get; set; }
+        //public virtual Customer Customer { get; set; }
 
-        public virtual DealerCar DealerCar { get; set; }
+        //public virtual DealerCar DealerCar { get; set; }
 
-        public virtual Scheduling Schedule { get; set; }
+        //public virtual Scheduling Schedule { get; set; }
 
-        public virtual SalesPerson Sp { get; set; }
+        //public virtual SalesPerson Sp { get; set; }
     }
 }

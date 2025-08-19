@@ -7,6 +7,7 @@ namespace FinalProject.WebForm.Models
 {
     public class ConsultationInsert
     {
+        public string ConsultId { get; set; }
         public int? ScheduleId { get; set; }
 
         public string Spid { get; set; }

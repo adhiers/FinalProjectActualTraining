@@ -25,7 +25,7 @@
                     NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
                 </p>--%>
                 <p>
-                    <a class="btn btn-primary btn-sm" href="https://go.microsoft.com/fwlink/?LinkId=301949">Table &raquo;</a>
+                    <a class="btn btn-primary btn-sm" href="SchedulingPage.aspx">Table &raquo;</a>
                 </p>
             </section>
             <section class="col-md-3" aria-labelledby="ttlConsult">
@@ -34,7 +34,7 @@
                     You can easily find a web hosting company that offers the right mix of features and price for your applications.
                 </p>--%>
                 <p>
-                    <a class="btn btn-primary btn-sm" href="https://go.microsoft.com/fwlink/?LinkId=301950">Table &raquo;</a>
+                    <a class="btn btn-primary btn-sm" href="ConsultationPage.aspx">Table &raquo;</a>
                 </p>
             </section>
             <section class="col-md-3" aria-labelledby="ttlTestDrive">

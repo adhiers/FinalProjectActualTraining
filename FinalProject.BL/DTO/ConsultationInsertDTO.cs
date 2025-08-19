@@ -20,8 +20,8 @@ namespace FinalProject.BL.DTO
 
         public string Note { get; set; }
 
-        public virtual SchedulingDTO Schedule { get; set; }
+        //public virtual SchedulingDTO Schedule { get; set; }
 
-        public virtual SalesPersonDTO Sp { get; set; }
+        //public virtual SalesPersonDTO Sp { get; set; }
     }
 }

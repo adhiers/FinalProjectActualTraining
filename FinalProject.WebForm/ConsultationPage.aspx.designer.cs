@@ -33,6 +33,15 @@ namespace FinalProject.WebForm
         protected global::System.Web.UI.WebControls.Panel pnlInsertConsultation;
 
         /// <summary>
+        /// txtConsultId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtConsultId;
+
+        /// <summary>
         /// txtScheduleId control.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace FinalProject.WebForm
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnInsertConsultation;
+
+        /// <summary>
+        /// btnUpdateConsultation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUpdateConsultation;
 
         /// <summary>
         /// btnCancelInsert control.

@@ -15,8 +15,8 @@ namespace FinalProject.BL.DTO
         public string DealerId { get; set; }
 
         public int DealerCarPrice { get; set; }
-        public virtual CarDTO Car { get; set; }
+        //public virtual CarDTO Car { get; set; }
 
-        public virtual DealerDTO Dealer { get; set; }
+        //public virtual DealerDTO Dealer { get; set; }
     }
 }

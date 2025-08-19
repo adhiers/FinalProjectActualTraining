@@ -20,8 +20,8 @@ namespace FinalProject.BL.DTO
 
         public DateTime AvailableEnd { get; set; }
 
-        public virtual DealerDTO Dealer { get; set; }
+        //public virtual DealerDTO Dealer { get; set; }
 
-        public virtual GuestDTO Guest { get; set; }
+        //public virtual GuestDTO Guest { get; set; }
     }
 }

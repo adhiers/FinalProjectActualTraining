@@ -73,15 +73,15 @@ namespace FinalProject.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public ActionResult<TestDriveDTO> Update(string id, TestDriveDTO testDriveDTO)
+        public ActionResult<TestDriveDTO> Update(string id, TestDriveUpdateDTO testDriveUpdateDTO)
         {
             try
             {
-                if (testDriveDTO == null || testDriveDTO.Tdid != id)
+                if (testDriveUpdateDTO == null || testDriveUpdateDTO.Tdid != id)
                 {
                     return BadRequest("Test drive DTO cannot be null and ID must match.");
                 }
-                var updatedTestDrive = _testDriveBL.UpdateTestDrive(testDriveDTO);
+                var updatedTestDrive = _testDriveBL.UpdateTestDrive(testDriveUpdateDTO);
                 return Ok(updatedTestDrive);
             }
             catch (KeyNotFoundException)

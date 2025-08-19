@@ -87,15 +87,15 @@ namespace FinalProject.BL
             return _mapper.Map<IEnumerable<TestDriveDTO>>(testDrives);
         }
 
-        public TestDriveDTO UpdateTestDrive(TestDriveDTO testDriveDTO)
+        public TestDriveDTO UpdateTestDrive(TestDriveUpdateDTO testDriveUpdateDTO)
         {
             try
             {
-                if (testDriveDTO == null)
+                if (testDriveUpdateDTO == null)
                 {
-                    throw new ArgumentNullException(nameof(testDriveDTO), "Test drive DTO cannot be null.");
+                    throw new ArgumentNullException(nameof(testDriveUpdateDTO), "Test drive DTO cannot be null.");
                 }
-                var testDrive = _mapper.Map<TestDrive>(testDriveDTO);
+                var testDrive = _mapper.Map<TestDrive>(testDriveUpdateDTO);
                 var updatedTestDrive = _testDriveDAL.Update(testDrive);
                 return _mapper.Map<TestDriveDTO>(updatedTestDrive);
             }

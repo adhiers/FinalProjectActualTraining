@@ -12,7 +12,7 @@ namespace FinalProject.BL
         IEnumerable<TestDriveDTO> GetTestDrives();
         TestDriveDTO GetById(string id);
         TestDriveDTO AddTestDrive(TestDriveInsertDTO testDriveInsertDTO);
-        TestDriveDTO UpdateTestDrive(TestDriveDTO testDriveDTO);
+        TestDriveDTO UpdateTestDrive(TestDriveUpdateDTO testDriveDTO);
         void DeleteTestDrive(string id);
     }
 }

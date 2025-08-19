@@ -9,9 +9,9 @@ public partial class TestDrive
 {
     public string Tdid { get; set; }
 
-    public string ConsultId { get; set; }
+    public string? ConsultId { get; set; }
 
-    public int? ScheduleId { get; set; }
+    public int ScheduleId { get; set; }
 
     public string DealerCarId { get; set; }
 

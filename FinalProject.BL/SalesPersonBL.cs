@@ -80,22 +80,23 @@ namespace FinalProject.BL
         {
             try
             {
-                if (salesPersonUpdateDTO == null)
-                {
-                    throw new ArgumentNullException(nameof(salesPersonUpdateDTO), "SalesPersonUpdateDTO cannot be null");
-                }
                 var existingSalesPerson = _salesPersonDAL.GetById(salesPersonUpdateDTO.SPId);
                 if (existingSalesPerson == null)
                 {
                     throw new Exception($"SalesPerson with ID {salesPersonUpdateDTO.SPId} not found.");
                 }
-                var updatedSalesPerson = _mapper.Map<SalesPerson>(salesPersonUpdateDTO);
-                var result = _salesPersonDAL.Update(updatedSalesPerson);
+
+                // Update properties directly
+                existingSalesPerson.SalesName = salesPersonUpdateDTO.SalesName;
+                existingSalesPerson.DealerId = salesPersonUpdateDTO.DealerId;
+                existingSalesPerson.Email = salesPersonUpdateDTO.Email;
+                existingSalesPerson.PhoneNumber = salesPersonUpdateDTO.PhoneNumber;
+
+                var result = _salesPersonDAL.Update(existingSalesPerson);
                 return _mapper.Map<SalesPersonDTO>(result);
             }
             catch (Exception ex)
             {
-                // Log the exception or handle it as needed
                 throw new Exception("An error occurred while updating the sales person.", ex);
             }
         }

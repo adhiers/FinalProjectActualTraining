@@ -1,0 +1,62 @@
+﻿@model IEnumerable<FinalProject.MVC.Models.SalesPerson>
+
+@{
+    ViewData["Title"] = "Sales Persons";
+}
+
+<h3>Sales Persons</h3>
+
+<br />
+<p>
+    <a asp-action="Create" class="btn btn-success btn-sm">Create New</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SPId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SalesName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DealerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SPId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SalesName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DealerId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.SPId" class="btn btn-warning btn-sm">Edit</a>&nbsp;
+                    <a asp-action="Delete" asp-route-id="@item.SPId" class="btn btn-danger btn-sm">Delete</a>&nbsp;
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

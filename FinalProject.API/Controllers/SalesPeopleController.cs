@@ -49,7 +49,7 @@ namespace FinalProject.API.Controllers
         }
 
         [HttpPost]
-        public ActionResult<SalesPersonDTO> CreateSalesPerson([FromBody] SalesPersonInsertDTO salesPersonInsertDTO)
+        public ActionResult<SalesPersonDTO> CreateSalesPerson( SalesPersonInsertDTO salesPersonInsertDTO)
         {
             if (salesPersonInsertDTO == null)
             {
@@ -67,18 +67,18 @@ namespace FinalProject.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public ActionResult<SalesPersonDTO> UpdateSalesPerson(string id, [FromBody] SalesPersonUpdateDTO salesPersonUpdateDTO)
+        public ActionResult<SalesPersonDTO> UpdateSalesPerson(string id, SalesPersonUpdateDTO salesPersonUpdateDTO)
         {
-            if (salesPersonUpdateDTO == null || salesPersonUpdateDTO.SPId != id)
-            {
-                return BadRequest("SalesPerson data is null or ID mismatch.");
-            }
             try
             {
+                if (salesPersonUpdateDTO == null || salesPersonUpdateDTO.SPId != id)
+                {
+                    return BadRequest("SalesPerson data is null or ID mismatch.");
+                }
                 var updatedSalesPerson = _salesPersonBL.UpdateSalesPerson(salesPersonUpdateDTO);
                 if (updatedSalesPerson == null)
                 {
-                    return NotFound($"SalesPerson with ID {id} not found.");
+                    return NotFound($"SalesPerson with ID {salesPersonUpdateDTO.SPId} not found.");
                 }
                 return Ok(updatedSalesPerson);
             }

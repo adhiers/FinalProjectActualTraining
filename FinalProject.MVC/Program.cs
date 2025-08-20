@@ -18,6 +18,7 @@ builder.Services.AddSession(options =>
 builder.Services.AddHttpClient<IDealerService, DealerService>();
 builder.Services.AddHttpClient<IAccountService, AccountService>();
 builder.Services.AddHttpClient<ICarService, CarService>();
+builder.Services.AddHttpClient<ISalesPersonService, SalesPersonService>();
 
 var app = builder.Build();
 

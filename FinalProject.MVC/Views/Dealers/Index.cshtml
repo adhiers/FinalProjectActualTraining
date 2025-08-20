@@ -1,0 +1,64 @@
+﻿@model IEnumerable<FinalProject.MVC.Models.Dealer>
+@{
+    ViewData["Title"] = "Dealers";
+}
+
+<h3>Dealer List</h3>
+<br />
+<p>
+    <a asp-action="Create" class="btn btn-success btn-sm">Create New</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DealerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DealerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DealerAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Province)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TaxRate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DealerId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DealerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DealerAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Province)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TaxRate)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.DealerId" class="btn btn-warning btn-sm">Edit</a>&nbsp;
+                    <a asp-action="Delete" asp-route-id="@item.DealerId" class="btn btn-danger btn-sm">Delete</a>&nbsp;
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<FinalProject.MVC.Models.Car>
+@{
+    ViewData["Title"] = "Cars";
+}
+
+<h3>Car List</h3>
+<br />
+<p>
+    <a asp-action="Create" class="btn btn-success btn-sm">Create New</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CarId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModelType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FuelType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BasePrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stock)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModelType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FuelType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BasePrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Stock)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.CarId" class="btn btn-warning btn-sm">Edit</a>&nbsp;
+                    <a asp-action="Delete" asp-route-id="@item.CarId" class="btn btn-danger btn-sm">Delete</a>&nbsp;
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

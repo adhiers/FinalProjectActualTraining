@@ -19,6 +19,8 @@ builder.Services.AddHttpClient<IDealerService, DealerService>();
 builder.Services.AddHttpClient<IAccountService, AccountService>();
 builder.Services.AddHttpClient<ICarService, CarService>();
 builder.Services.AddHttpClient<ISalesPersonService, SalesPersonService>();
+builder.Services.AddHttpClient<IDealerCarService, DealerCarService>();
+
 
 var app = builder.Build();
 

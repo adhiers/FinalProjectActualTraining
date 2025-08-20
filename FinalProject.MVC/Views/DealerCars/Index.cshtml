@@ -1,0 +1,58 @@
+﻿@model IEnumerable<FinalProject.MVC.Models.DealerCar>
+
+@{
+    ViewData["Title"] = "Dealer Cars";
+}
+
+<h3>Dealer Cars</h3>
+<br />
+<p>
+    <a asp-action="Create" class="btn btn-success btn-sm">Create New</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DealerCarId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DealerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DealerCarPrice)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DealerCarId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DealerId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DealerCarPrice)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.DealerCarId" class="btn btn-warning btn-sm">Edit</a>&nbsp;
+                    <a asp-action="Delete" asp-route-id="@item.DealerCarId" class="btn btn-danger btn-sm">Delete</a>&nbsp;
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<p>
+    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+</p>
+
+

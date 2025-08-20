@@ -85,8 +85,8 @@ namespace FinalProject.MVC.Services
             if (response.IsSuccessStatusCode)
             {
                 var data = await response.Content.ReadAsStringAsync();
-                var dealers = JsonSerializer.Deserialize<IEnumerable<SalesPerson>>(data);
-                return dealers ?? Enumerable.Empty<SalesPerson>();
+                var salesPersons = JsonSerializer.Deserialize<IEnumerable<SalesPerson>>(data);
+                return salesPersons ?? Enumerable.Empty<SalesPerson>();
             }
             else
             {

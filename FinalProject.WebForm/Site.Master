@@ -50,7 +50,7 @@
                         <li class="nav-item"><a class="nav-link" runat="server" href="GuestPage.aspx">Guest</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="SchedulingPage.aspx">Schedule</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="ConsultationPage.aspx">Consultation</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Test Drive</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="TestDrivePage.aspx">Test Drive</a></li>
                     </ul>
                 </div>
             </div>
@@ -60,7 +60,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+                <p>&copy; <%: DateTime.Now.Year %> - Auto Mobil Application</p>
             </footer>
         </div>
     </form>

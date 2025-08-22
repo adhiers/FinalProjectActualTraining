@@ -16,13 +16,22 @@ namespace FinalProject.WebForm
         private GuestsServices _guestService = new GuestsServices();
         protected async void Page_Load(object sender, EventArgs e)
         {
-            await FillGrid();
+            if (!IsPostBack)
+            {
+                await FillGrid();
+            }
         }
 
         private async Task FillGrid()
         {
             gvSchedules.DataSource = await _schedulingsServices.GetSchedules();
             gvSchedules.DataBind();
+        }
+
+        protected async void gvSchedules_PageIndexChanged(object source, DataGridPageChangedEventArgs e)
+        {
+            gvSchedules.CurrentPageIndex = e.NewPageIndex;
+            await FillGrid();
         }
 
         protected async void btnDetail_Command(object sender, CommandEventArgs e)

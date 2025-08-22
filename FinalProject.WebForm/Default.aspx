@@ -5,16 +5,13 @@
     <main>
         <section class="text-center mb-5" aria-labelledby="aspnetTitle">
             <h1 id="aspnetTitle">Welcome Dealer</h1>
-            <p class="lead">What would like to check or manage today?</p>
+            <p class="lead">What would you like to check or manage today?</p>
             <%--<p><a href="http://www.asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>--%>
         </section>
 
         <div class="row">
             <section class="col-md-3" aria-labelledby="ttlGuest">
                 <h2 id="ttlGuest">Guest</h2>
-                <p>
-                    lorem15
-                </p>
                 <p>
                     <a class="btn btn-primary btn-sm" href="GuestPage.aspx">Table &raquo;</a>
                 </p>

@@ -65,6 +65,12 @@ namespace FinalProject.WebForm.Services
         {
             try
             {
+                // If search is empty, return all schedules
+                if (string.IsNullOrWhiteSpace(search))
+                {
+                    return await GetSchedules();
+                }
+
                 var response = await _httpClient.GetAsync($"/api/Schedulings/search/{search}");
                 if (response.IsSuccessStatusCode)
                 {
@@ -74,7 +80,10 @@ namespace FinalProject.WebForm.Services
                 }
                 else
                 {
-                    throw new Exception($"Error fetching schedules by search term '{search}': {response.ReasonPhrase}");
+                    //return empty list
+                    List<Scheduling> scheduleList;
+                    return scheduleList = new List<Scheduling>();
+                    //throw new Exception($"Error fetching schedules by search term '{search}': {response.ReasonPhrase}");
                 }
             }
             catch (Exception ex)
